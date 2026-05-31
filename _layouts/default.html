@@ -19,17 +19,20 @@
       window.addEventListener("resize",resize);
     })();
   </script>
-  <title>{{ page.title | default: site.title }}</title>
+  <style>
+    html { width: var(--vw); height: var(--vh); }
+    body { height: 100%; }
+  </style>
+  <title>{% if page.title %}{{ page.title }}{% elsif site.title %}{{ site.title }}{% else %}{{ site.github.repository_name }}{% endif %}</title>
 </head>
 <body>
-  <style>html, body { height: 100%; }</style>
   <div style="display:flex;flex-direction:column;max-width:1060px;margin:0 auto;height:100%">
     <div id="content" style="padding-top:14px">
       {{ content }}
     </div>
     <footer style="margin-top:auto">
       <hr>
-      <div style="padding:0 1rem 2rem 1rem">Copyright {{ site.github.owner_name }}/{{ site.github.repository_name }}, {{ site.time | date: "%Y" }}</div>
+      <div style="padding:0 1rem 2rem 1rem">Copyright <a href="https://github.com/{{ site.github.owner_name }}" target="_blank">{{ site.github.owner_name }}</a> / <a href="https://github.com/{{ site.github.owner_name }}/{{ site.github.repository_name }}" target="_blank">{{ site.github.repository_name }}</a>, {{ site.time | date: "%Y" }}</div>
     </footer>
   </div>
 </body>
