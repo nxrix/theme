@@ -23,11 +23,11 @@
     html { width: var(--vw); height: var(--vh); }
     body { height: 100%; }
     footer a {
-      color: var(--ce);
-      text-decoration: underline;
-      text-decoration-color: var(--ce);
+      color: var(--ce) !important;
+      text-decoration: underline !important;
+      text-decoration-color: var(--ce) !important;
     }
-    footer a:hover { text-decoration-color: var(--ac); }
+    footer a:hover { text-decoration-color: var(--ac) !important; }
   </style>
   <title>{% if page.title %}{{ page.title }}{% elsif site.title %}{{ site.title }}{% else %}{{ site.github.repository_name }}{% endif %}</title>
 </head>
