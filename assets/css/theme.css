@@ -39,6 +39,65 @@
   --ar: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyNHB4IiBmaWxsPSIjZTdlMGVlIj48cGF0aCBkPSJNNDgwLTM0NCAyNDAtNTg0bDU2LTU2IDE4NCAxODQgMTg0LTE4NCA1NiA1Ni0yNDAgMjQwWiIvPjwvc3ZnPg==");
 }
 
+:root[data-theme="sepia"] {
+  --ac: #a65;
+  --c0: #faf6ed;
+  --c1: #f0ead6;
+  --c2: #e4dcc8;
+  --c3: #d4cbb5;
+  --c4: #c4b9a0;
+  --c5: #b4a78b;
+  --c6: #9a8c72;
+  --c7: #80745e;
+  --c8: #665c4b;
+  --c9: #4c4538;
+  --ca: #3b352b;
+  --cb: #2f2a22;
+  --cc: #241f19;
+  --cd: #181511;
+  --ce: #2c2418;
+  --cf: #1a1510;
+  --ar: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyNHB4IiBmaWxsPSIjMmMyNDE4Ij48cGF0aCBkPSJNNDgwLTM0NCAyNDAtNTg0bDU2LTU2IDE4NCAxODQgMTg0LTE4NCA1NiA1Ni0yNDAgMjQwWiIvPjwvc3ZnPg==");
+}
+
+:root, :root[data-text="default"] {
+  --font-body: "Estedad", sans-serif;
+  --font-size: 14px;
+  --line-height: 1.5;
+  --heading-weight: 700;
+  --content-width: 640px;
+  --letter-spacing: normal;
+}
+:root[data-text="serif"] {
+  --font-body: Georgia, "Times New Roman", Times, serif;
+  --line-height: 1.6;
+  --heading-weight: 600;
+  --content-width: 620px;
+}
+:root[data-text="mono"] {
+  --font-body: ui-monospace, "Cascadia Code", "Consolas", monospace;
+  --font-size: 13px;
+  --line-height: 1.55;
+  --heading-weight: 700;
+  --content-width: 720px;
+  --letter-spacing: -0.01em;
+}
+:root[data-text="large"] {
+  --font-body: "Estedad", sans-serif;
+  --font-size: 17px;
+  --line-height: 1.65;
+  --heading-weight: 700;
+  --content-width: 680px;
+}
+:root[data-text="compact"] {
+  --font-body: "Estedad", sans-serif;
+  --font-size: 12px;
+  --line-height: 1.35;
+  --heading-weight: 700;
+  --content-width: 600px;
+  --letter-spacing: 0.01em;
+}
+
 @font-face {
   font-family: "Estedad";
   src: url("../font/estedad.woff2");
@@ -55,9 +114,10 @@ input, button, textarea, select, optgroup, option {
   color: inherit;
 }
 html {
-  font-family: "Estedad";
-  font-size: 14px;
-  line-height: 1.5;
+  font-family: var(--font-body);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing);
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -69,7 +129,7 @@ h1 { padding-top: 1rem; }
 h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
-  font-weight: 700;
+  font-weight: var(--heading-weight);
   line-height: 1.15;
   margin-top: 0;
   margin-bottom: 1rem;
@@ -81,9 +141,9 @@ a[href], a.link {
   cursor: pointer;
 }
 a[href]:hover, a.link:hover { text-decoration: underline; }
-pre, code { font-family: monospace; }
+pre, code { font-family: ui-monospace, "Cascadia Code", "Consolas", monospace; }
 img { max-width: calc(100vw - 28px); }
-p, table, h1, h2, h3, h4, h5, h6 { max-width: 640px; }
+p, table, h1, h2, h3, h4, h5, h6 { max-width: var(--content-width); }
 hr {
   box-sizing: border-box;
   width: 100%;

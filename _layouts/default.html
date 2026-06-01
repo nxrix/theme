@@ -3,6 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const prefs = [
+        { key: "theme", attr: "data-theme", values: ["dark", "light", "sepia"] },
+        { key: "text", attr: "data-text", values: ["default", "serif", "mono", "large", "compact"] }
+      ];
+      for (const { key, attr, values } of prefs) {
+        const saved = localStorage.getItem(key);
+        if (values.includes(saved)) root.setAttribute(attr, saved);
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="{{ "/assets/css/theme.css" | relative_url }}?{{ site.time | date: "%s%N" }}">
   <script>
     (()=>{
@@ -27,10 +40,57 @@
       text-decoration-color: var(--ce) !important;
     }
     footer a:hover { text-decoration-color: var(--ac) !important; }
+    #theme-controls {
+      position: fixed;
+      top: 14px;
+      right: 14px;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: stretch;
+    }
+    #theme-controls label {
+      font-size: 11px;
+      line-height: 1;
+      color: var(--c7);
+    }
   </style>
   <title>{% if page.title %}{{ page.title }}{% elsif site.title %}{{ site.title }}{% else %}{{ site.github.repository_name }}{% endif %}</title>
 </head>
 <body>
+  <div id="theme-controls">
+    <label for="color-switch">Color</label>
+    <select id="color-switch" data-attr="data-theme" data-storage="theme" aria-label="Color theme">
+      <option value="dark">Dark</option>
+      <option value="light">Light</option>
+      <option value="sepia">Sepia</option>
+    </select>
+    <label for="text-switch">Text</label>
+    <select id="text-switch" data-attr="data-text" data-storage="text" aria-label="Text style">
+      <option value="default">Default</option>
+      <option value="serif">Serif</option>
+      <option value="mono">Mono</option>
+      <option value="large">Large</option>
+      <option value="compact">Compact</option>
+    </select>
+  </div>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      for (const select of document.querySelectorAll("#theme-controls select")) {
+        const attr = select.dataset.attr;
+        const storage = select.dataset.storage;
+        const current = root.getAttribute(attr) || select.options[0].value;
+        select.value = current;
+        select.addEventListener("change", () => {
+          const value = select.value;
+          root.setAttribute(attr, value);
+          localStorage.setItem(storage, value);
+        });
+      }
+    })();
+  </script>
   <div style="display:flex;flex-direction:column;max-width:1060px;margin:0 auto;height:100%">
     <div id="content" style="padding-top:14px">
       {{ content }}
