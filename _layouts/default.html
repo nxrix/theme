@@ -24,24 +24,26 @@
       ];
       const themes = ["auto","light","dark"];
       let theme = localStorage.getItem("theme")||"auto";
-      const e = document.querySelector("footer > div > div:last-child");
-      const setTheme = (t) => {
-        theme = t;
-        localStorage.setItem("theme", t);
-        if (t === "auto") root.removeAttribute("data-theme");
-        else root.setAttribute("data-theme",t);
-        e.querySelectorAll("div").forEach((btn,i) => {
-          btn.style.border = themes[i]===t?"1px solid var(--c3)":"none";
+      document.addEventListener("DOMContentLoaded", () => {
+        const e = document.querySelector("footer > div > div:last-child");
+        const setTheme = (t) => {
+          theme = t;
+          localStorage.setItem("theme", t);
+          if (t === "auto") root.removeAttribute("data-theme");
+          else root.setAttribute("data-theme",t);
+          e.querySelectorAll("div").forEach((btn,i) => {
+            btn.style.border = themes[i]===t?"1px solid var(--c3)":"none";
+          });
+        }
+        themes.forEach((t,i) => {
+          const btn = document.createElement("div");
+          btn.innerHTML = icons[i];
+          btn.style.borderRadius = "13px";
+          btn.onclick = () => setTheme(t);
+          e.appendChild(btn);
         });
-      }
-      themes.forEach((t,i) => {
-        const btn = document.createElement("div");
-        btn.innerHTML = icons[i];
-        btn.style.borderRadius = "12px";
-        btn.onclick = () => setTheme(t);
-        e.appendChild(btn);
+        setTheme(theme);
       });
-      setTheme(theme);
     })();
   </script>
   <style>
@@ -62,11 +64,11 @@
     </div>
     <footer style="margin-top:auto">
       <hr>
-      <div style="height:24px;display:flex;padding:0 1rem 2rem 1rem">
+      <div style="height:26px;display:flex;padding:0 1rem 2rem 1rem">
         <div style="margin:auto 0">
           Copyright <a href="https://github.com/{{ site.github.owner_name }}" target="_blank">{{ site.github.owner_name }}</a> / <a href="https://github.com/{{ site.github.owner_name }}/{{ site.github.repository_name }}" target="_blank">{{ site.github.repository_name }}</a>, {{ site.time | date: "%Y" }}
         </div>
-        <div style="display:flex;height:100%;aspect-ratio:3;margin-left:auto;border:1px solid var(--c3);border-radius:12px"></div>
+        <div style="display:flex;height:100%;aspect-ratio:3;margin-left:auto;border:1px solid var(--c3);border-radius:13px"></div>
       </div>
     </footer>
   </div>
