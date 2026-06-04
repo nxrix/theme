@@ -16,7 +16,8 @@ layout: default
 
 ---
 
-> test test test test test test test test test test test test test test test test
+> test 1
+> > test 2
 
 - test 1
   - test 1.1
@@ -28,11 +29,8 @@ layout: default
 - test 3
 
 1. test
-  1. test
      1. test
      2. test
-  2. test
-  3. test
 2. test
 3. test
 
@@ -53,11 +51,24 @@ console.log("test");
 
 
 | × | 1 | i | j | k | 
-|---|---|---|---|---|
+|:-:|:-:|:-:|:-:|:-:|
 | 1 | 1 | i | j | k |
-|---|---|---|---|---|
 | i | i |-j | k |-1 |
-|---|---|---|---|---|
 | j | j | k |-1 |-i |
-|---|---|---|---|---|
 | k | k |-1 |-i | j |
+
+[test](#)
+
+**bold**
+*italic*
+***bold italic***
+~~strikethrough~~
+
+<input type="text">
+
+<button>button</button>
+
+<select>
+  <option>test 1</option>
+  <option>test 2</option>
+</select>
