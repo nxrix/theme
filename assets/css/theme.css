@@ -1,5 +1,6 @@
 :root[data-theme="light"] {
   --ac: #85f;
+  --sac: #85fa;
   --c0: #fff;
   --c1: #eee;
   --c2: #ddd;
@@ -20,6 +21,7 @@
 }
 :root, :root[data-theme="dark"] {
   --ac: #85f;
+  --sac: #85fa;
   --c0: #000;
   --c1: #111;
   --c2: #222;
@@ -47,8 +49,14 @@
 }
 
 * {
-  scrollbar-color: var(--c5) var(--c3);
   unicode-bidi: plaintext;
+  -webkit-tap-highlight-color: transparent;
+  scrollbar-color: var(--c5) var(--c3);
+}
+
+::selection {
+  background: var(--sac);
+  color: #eee;
 }
 
 :focus-visible {
@@ -147,10 +155,10 @@ thead tr {
   border-bottom: solid 1px var(--c3);
 }
 tr:not(:last-child) {
-  border-bottom: solid 1px var(--c1);
+  border-bottom: solid 1px var(--c2);
 }
 th, td {
-  padding: 3px 6px 3px 0;
+  padding: 2px 8px 2px 0;
 }
 th:last-child, td:last-child {
   padding-right: 0;
