@@ -116,3 +116,36 @@ select {
   background-position: right 4px center;
   background-image: var(--ar);
 }
+
+table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+table pre, table code, table tt {
+  font-size: inherit;
+  line-height: inherit;
+}
+th > pre:only-child, td > pre:only-child {
+  margin: 0;
+  padding: 0;
+}
+thead tr {
+  border-bottom: solid 1px var(--c3);
+}
+tr:not(:last-child) {
+  border-bottom: solid 1px var(--c1);
+}
+th, td {
+  padding: 3px 6px 3px 0;
+}
+th:last-child, td:last-child {
+  padding-right: 0;
+}
+th {
+  text-align: left;
+  vertical-align: bottom;
+}
+td {
+  color: var(--cb);
+  vertical-align: top;
+}
