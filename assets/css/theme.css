@@ -172,6 +172,22 @@ td {
   vertical-align: top;
 }
 
+div.highlighter-rouge {
+  width: fit-content;
+  max-width: 100%;
+  border: 1px solid var(--c3);
+  border-radius: 8px;
+  overflow: auto;
+}
+.highlighter-rouge div {
+  width: fit-content;
+  height: fit-content;
+}
+.highlighter-rouge pre {
+  font-family: monospace;
+  font-size: 14px;
+  margin: 1em;
+}
 .highlighter-rouge .highlight pre code span.p {
   color: #ff9500;
 }
@@ -193,9 +209,9 @@ td {
 .highlighter-rouge .highlight pre code span.o {
   color: #8944cf;
 }
-/*.highlighter-rouge .highlight pre code span.nx {
-  color: #DE1b45;
-}*/
+.highlighter-rouge .highlight pre code span.nx {
+  /*color: #DE1b45;*/
+}
 .highlighter-rouge .highlight pre code span.nt {
   color: #00AE85;
 }
