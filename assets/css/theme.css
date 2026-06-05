@@ -193,6 +193,8 @@ div.highlighter-rouge {
   overflow: auto;
 }
 .highlighter-rouge pre {
+  width: fit-content;
+  height: fit-content;
   font-family: monospace;
   font-size: 14px;
   margin: 1rem;
