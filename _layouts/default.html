@@ -36,7 +36,10 @@
           localStorage.setItem("theme",t);
           applyTheme(t);
           e.querySelectorAll("button").forEach((btn,i) => {
-            btn.style.outline = themes[i]===t?"1px solid var(--c3)":"none";
+            const b = themes[i]===t;
+            btn.style.color = b?"var(--ce)":"var(--cb";
+            btn.style.outline = b?"1px solid var(--c3)":"none";
+            btn.style.zIndex = b?"2":"1";
           });
         }
         themes.forEach((t,i) => {
@@ -61,6 +64,7 @@
     }
     footer a:hover { text-decoration-color: var(--ac) !important; }
     footer > div > div:last-child button {
+      color: var(--cb);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -74,7 +78,7 @@
     }
     footer > div > div:last-child button:focus-visible {
       outline: 2px solid var(--ac) !important;
-      z-index: 2;
+      z-index: 3;
     }
   </style>
   <title>{% if page.title %}{{ page.title }}{% elsif site.title %}{{ site.title }}{% else %}{{ site.github.repository_name }}{% endif %}</title>
