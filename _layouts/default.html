@@ -37,7 +37,8 @@
           applyTheme(t);
           e.querySelectorAll("button").forEach((btn,i) => {
             const b = themes[i]===t;
-            btn.style.color = b?"var(--ce)":"var(--cb";
+            btn.style.color = b?"var(--c0)":"var(--c1)";
+            btn.style.color = b?"var(--ce)":"var(--c4)";
             btn.style.outline = b?"1px solid var(--c3)":"none";
             btn.style.zIndex = b?"2":"1";
           });
@@ -64,7 +65,8 @@
     }
     footer a:hover { text-decoration-color: var(--ac) !important; }
     footer > div > div:last-child button {
-      color: var(--cb);
+      background: var(--c1);
+      color: var(--c4);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -88,8 +90,8 @@
     <div id="content" style="padding-top:14px">
       {{ content }}
     </div>
+    <hr>
     <footer style="margin-top:auto">
-      <hr>
       <div style="height:24px;display:flex;padding:0 1rem 2rem 1rem">
         <div style="margin:auto 0">
           Copyright <a href="https://github.com/{{ site.github.owner_name }}" target="_blank">{{ site.github.owner_name }}</a> / <a href="https://github.com/{{ site.github.owner_name }}/{{ site.github.repository_name }}" target="_blank">{{ site.github.repository_name }}</a>, {{ site.time | date: "%Y" }}
