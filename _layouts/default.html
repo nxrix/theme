@@ -37,7 +37,7 @@
           applyTheme(t);
           e.querySelectorAll("button").forEach((btn,i) => {
             const b = themes[i]===t;
-            btn.style.color = b?"var(--c0)":"var(--c1)";
+            btn.style.background = b?"var(--c0)":"var(--c1)";
             btn.style.color = b?"var(--ce)":"var(--c8)";
             btn.style.outline = b?"1px solid var(--c3)":"none";
             btn.style.zIndex = b?"2":"1";
