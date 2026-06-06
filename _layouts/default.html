@@ -83,7 +83,7 @@
       z-index: 3 !important;
     }
   </style>
-  <title>{% if page.title %}{{ page.title }}{% elsif site.title %}{{ site.title }}{% else %}{{ site.github.repository_name | capitalize }}{% endif %}</title>
+  <title>{% if page.title %}{{ page.title }}{% elsif site.title %}{{ site.title | capitalize }}{% endif %}</title>
   <meta name="description" content="{{ page.description | default: site.description | default: site.github.project_tagline | escape }}">
   <meta name="author" content="{{ site.github.owner_name | default: site.author }}">
 </head>
