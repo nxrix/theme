@@ -80,10 +80,12 @@
     }
     footer > div > div:last-child button:focus-visible {
       outline: 2px solid var(--ac) !important;
-      z-index: 3;
+      z-index: 3 !important;
     }
   </style>
-  <title>{% if page.title %}{{ page.title }}{% elsif site.title %}{{ site.title }}{% else %}{{ site.github.repository_name }}{% endif %}</title>
+  <title>{% if page.title %}{{ page.title }}{% elsif site.title %}{{ site.title }}{% else %}{{ site.github.repository_name | capitalize }}{% endif %}</title>
+  <meta name="description" content="{{ page.description | default: site.description | default: site.github.project_tagline | escape }}">
+  <meta name="author" content="{{ site.github.owner_name | default: site.author }}">
 </head>
 <body>
   <div style="display:flex;flex-direction:column;max-width:1060px;margin:0 auto;height:100%">
@@ -94,7 +96,7 @@
     <footer style="margin-top:auto">
       <div style="height:24px;display:flex;padding:0 1rem 2rem 1rem">
         <div style="margin:auto 0">
-          Copyright <a href="https://github.com/{{ site.github.owner_name }}" target="_blank">{{ site.github.owner_name }}</a> / <a href="https://github.com/{{ site.github.owner_name }}/{{ site.github.repository_name }}" target="_blank">{{ site.github.repository_name }}</a>, {{ site.time | date: "%Y" }}
+          Copyright <a href="{{ site.github.owner_url }}" target="_blank">{{ site.github.owner_name }}</a> / <a href="{{ site.github.repository_url }}" target="_blank">{{ site.github.repository_name }}</a>, {{ site.time | date: "%Y" }}
         </div>
         <div style="display:flex;height:100%;aspect-ratio:3;margin-left:auto;outline:1px solid var(--c3);border-radius:12px"></div>
       </div>
