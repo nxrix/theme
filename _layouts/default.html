@@ -89,11 +89,11 @@
 </head>
 <body>
   <div style="display:flex;flex-direction:column;max-width:1060px;margin:0 auto;height:100%">
-    <div id="content" style="flex:1;padding-top:14px">
+    <div id="content" style="padding-top:14px">
       {{ content }}
-      <hr>
     </div>
-    <footer>
+    <footer style="margin-top:auto">
+      <hr>
       <div style="height:24px;display:flex;padding:0 1rem 2rem 1rem">
         <div style="margin:auto 0">
           Copyright <a href="{{ site.github.owner_url }}" target="_blank">{{ site.github.owner_name }}</a> / <a href="{{ site.github.repository_url }}" target="_blank">{{ site.github.repository_name }}</a>, {{ site.time | date: "%Y" }}
