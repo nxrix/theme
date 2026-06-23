@@ -5,9 +5,21 @@
  * ISC License - See NOTICE.md
  */
 
-:root[data-theme="light"] {
+@font-face {
+  font-family: "Estedad";
+  src: url("../fonts/estedad/estedad.woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --serif: "Source Serif 4", ui-serif, serif;
+  --sans-serif: "Estedad", ui-sans-serif, sans-serif;
   --ac: #85f;
   --sac: #85fa;
+}
+
+:root[data-theme="light"] {
   --c0: #fff;
   --c1: #eee;
   --c2: #ddd;
@@ -27,8 +39,6 @@
   --ar: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyNHB4IiBmaWxsPSIjMWQxYTI0Ij48cGF0aCBkPSJNNDgwLTM0NCAyNDAtNTg0bDU2LTU2IDE4NCAxODQgMTg0LTE4NCA1NiA1Ni0yNDAgMjQwWiIvPjwvc3ZnPg==");
 }
 :root, :root[data-theme="dark"] {
-  --ac: #85f;
-  --sac: #85fa;
   --c0: #000;
   --c1: #111;
   --c2: #222;
@@ -48,13 +58,6 @@
   --ar: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyNHB4IiBmaWxsPSIjZTdlMGVlIj48cGF0aCBkPSJNNDgwLTM0NCAyNDAtNTg0bDU2LTU2IDE4NCAxODQgMTg0LTE4NCA1NiA1Ni0yNDAgMjQwWiIvPjwvc3ZnPg==");
 }
 
-@font-face {
-  font-family: "Estedad";
-  src: url("../fonts/estedad/estedad.woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-
 * {
   unicode-bidi: plaintext;
   -webkit-tap-highlight-color: transparent;
@@ -72,9 +75,7 @@
 }
 
 html {
-  font-family: "Estedad";
-  font-size: 14px;
-  line-height: 1.5;
+  font: 14px/1.5 var(--sans-serif);
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -86,10 +87,11 @@ body.fullscreen { margin: 0; }
 
 h1 { padding-top: 1rem; }
 h1, h2, h3, h4, h5, h6 {
+  font: 17px/1.5 var(--serif);
   font-weight: 700;
   line-height: 1.15;
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0.25rem;
 }
 
 a[href], a.link {
@@ -113,8 +115,8 @@ hr {
   box-sizing: border-box;
   width: 100%;
   margin: 2rem 0;
-  border: 1px solid var(--c3);
-  border-top: 1px;
+  border: none;
+  border-bottom: 1px solid var(--c3);
 }
 
 button, input, select, textarea, optgroup, option {
