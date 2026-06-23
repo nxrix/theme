@@ -1,3 +1,10 @@
+/* Copyright nxrix, 2026 */
+/* 
+ * Portions derived from Observable Notebook-Kit
+ * Copyright 2025 Observable, Inc.
+ * ISC License - See NOTICE.md
+ */
+
 :root[data-theme="light"] {
   --ac: #85f;
   --sac: #85fa;
