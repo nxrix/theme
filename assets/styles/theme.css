@@ -85,7 +85,13 @@ html {
 body { margin: 0 14px; }
 body.fullscreen { margin: 0; }
 
-h1 { padding-top: 1rem; }
+/*h1 { padding-top: 1rem;}*/
+h1 { font-size: 2.4285em; } /* 2em */
+h2 { font-size: 1.8214em; } /* 1.5em */
+h3 { font-size: 1.4207em; } /* 1.17em */
+h4 { font-size: 1.2142em; } /* 1em */
+h5 { font-size: 1.0078em; } /* 0.83em */
+h6 { font-size: 0.8135em; } /* 0.67em */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--serif);
   font-weight: 700;
