@@ -2,7 +2,7 @@
 layout: default
 ---
 <style>
-.observablehq:has(.observablehq--inspect) {
+.observablehq:empty, .observablehq:has(.observablehq--inspect) {
   display: none;
 }
 </style>
