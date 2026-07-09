@@ -93,12 +93,12 @@
 </head>
 <body>
   <div style="display:flex;flex-direction:column;height:100%">
-    <main>
+    <main style="width:100%">
       {{ content }}
     </main>
-    <footer style="margin-top:auto">
+    <footer style="width:100%;max-width:var(--max-width);margin:auto">
       <hr>
-      <div style="height:24px;display:flex">
+      <div style="height:24px;display:flex;font-family:var(--sans-serif);font-size:13px">
         <div style="margin:auto 0">
           Copyright <a href="{{ site.github.owner_url }}" target="_blank">{{ site.github.owner_name }}</a> / <a href="{{ site.github.repository_url }}" target="_blank">{{ site.github.repository_name }}</a>
         </div>
