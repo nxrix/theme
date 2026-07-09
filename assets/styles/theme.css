@@ -95,6 +95,7 @@ h6 { font-size: 0.8135em; } /* 0.67em */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--serif);
   font-weight: 700;
+  font-variation-settings: "opsz" 14;
   line-height: 1.15;
   margin-top: 0;
   margin-bottom: 0.25rem;
