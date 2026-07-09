@@ -59,6 +59,8 @@
     })();
   </script>
   <style>
+    html { height: var(--vh); }
+    body { height: calc(100% - 64px); }
     footer a {
       /*color: var(--ce) !important;
       text-decoration: underline !important;
@@ -93,10 +95,10 @@
 </head>
 <body>
   <div style="display:flex;flex-direction:column;height:100%">
-    <main style="width:100%">
+    <main style="width:100%;margin:0 auto">
       {{ content }}
     </main>
-    <footer style="width:100%;max-width:var(--max-width);margin:auto">
+    <footer style="width:100%;max-width:var(--max-width);margin:auto auto 0 auto">
       <hr>
       <div style="height:24px;display:flex;font-family:var(--sans-serif);font-size:13px">
         <div style="margin:auto 0">
