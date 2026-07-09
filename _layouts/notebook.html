@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preload" as="style" href="https://nxrix.github.io/observable-renderer/notebook.css?{{ site.time | date: "%s%N" }}">
   <link rel="stylesheet" type="text/css" href="https://nxrix.github.io/observable-renderer/notebook.css?{{ site.time | date: "%s%N" }}">
-  <script type="module" src="https://nxrix.github.io/observable-renderer/loader.js?{{ site.time | date: "%s%N" }}"></script>
+  {% unless page.raw == false %}
+  <script
+    type="module"
+    src="https://nxrix.github.io/observable-renderer/loader.js?{{ site.time | date: '%s%N' }}">
+  </script>
+  {% endunless %}
   <script>
     (()=>{
       const root = document.documentElement;
