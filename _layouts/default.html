@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preload" as="style" href="{{ "/assets/styles/notebook.css" | relative_url }}?{{ site.time | date: "%s%N" }}">
   <link rel="stylesheet" type="text/css" href="{{ "/assets/styles/notebook.css" | relative_url }}?{{ site.time | date: "%s%N" }}">
+  <title>{% if page.title %}{{ page.title }}{% elsif site.title %}{{ site.title | capitalize }}{% endif %}</title>
+  <meta name="description" content="{{ page.description | default: site.description | default: site.github.project_tagline | escape }}">
+  <meta name="author" content="{{ site.github.owner_name | default: site.author }}">
+  <link rel="icon" href="{{ page.favicon | default: site.favicon | default: "/assets/images/ico/favicon.ico" | relative_url }}">
   <script>
     (()=>{
       const root = document.documentElement;
@@ -86,10 +90,6 @@
       z-index: 3 !important;
     }
   </style>
-  <title>{% if page.title %}{{ page.title }}{% elsif site.title %}{{ site.title | capitalize }}{% endif %}</title>
-  <meta name="description" content="{{ page.description | default: site.description | default: site.github.project_tagline | escape }}">
-  <meta name="author" content="{{ site.github.owner_name | default: site.author }}">
-  <link rel="icon" href="{{ page.favicon | default: site.favicon | default: "/favicon.ico" | relative_url }}">
 </head>
 <body>
   <div style="display:flex;flex-direction:column;min-height:calc(var(--vh) - 64px)">
