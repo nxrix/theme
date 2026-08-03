@@ -463,7 +463,7 @@ html {
   margin-top: 0;
 }
 
-.observablehq:empty, .observablehq:not(.observablehq--error):has(.observablehq--inspect) {
+.observablehq:empty, .observablehq:has(.observablehq--collapsed), /*.observablehq:not(.observablehq--error):has(.observablehq--inspect)*/ {
   display: none;
 }
 
