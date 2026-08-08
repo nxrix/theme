@@ -467,6 +467,11 @@ html {
   display: none;
 }
 
+.hljs-meta { color: var(--syntax-meta); }
+.hljs-tag .hljs-name { color: var(--syntax-keyword); }
+.hljs-attr { color: var(--syntax-definition); }
+.hljs-string { color: var(--syntax-string); }
+
 /* theme */
 
 :root[data-theme="light"] {
