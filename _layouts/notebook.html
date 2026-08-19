@@ -8,7 +8,7 @@ import define from "https://api.observablehq.com/{{ page.notebook }}.js?v=4";
 const names = new Set();
 const runtime = new Runtime();
 runtime.module(define, name => {
-  if (name.startsWith("viewof ")) {
+  if (name?.startsWith("viewof ")) {
     const v = name.slice(7);
     names.add(v);
     return Inspector.into("main")();
