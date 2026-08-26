@@ -449,6 +449,10 @@ p .plot-d6a7b5 {
 
 /* fix */
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 html {
   font-variation-settings: "opsz" 14;
 }
