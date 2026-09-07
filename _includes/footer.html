@@ -1,0 +1,15 @@
+<footer style="width:100%;max-width:var(--max-width);margin:auto auto 0 auto">
+  <hr>
+  <div style="height:24px;display:flex">
+    {% if site.github.owner_name == "nxrix" %}
+    <div style="margin:auto 0;font-family:var(--sans-serif);font-size:13px">
+      Copyright <a href="{{ site.github.owner_url }}" target="_blank">{{ site.github.owner_name }}</a> / <a href="{{ site.github.repository_url }}" target="_blank">{{ site.github.repository_name }}</a>
+    </div>
+    {% else %}
+    <div style="margin:auto 0;font-family:var(--sans-serif);font-size:13px">
+      Copyright <a href="{{ site.github.owner_url }}" target="_blank">{{ site.github.owner_name }}</a> / <a href="{{ site.github.repository_url }}" target="_blank">{{ site.github.repository_name }}</a>
+    </div>
+    {% endif %}
+    <div style="display:flex;height:100%;aspect-ratio:3;margin-left:auto;outline:1px solid var(--theme-foreground-faintest);border-radius:12px"></div>
+  </div>
+</footer>
