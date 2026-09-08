@@ -467,7 +467,7 @@ html {
   margin-top: 0;
 }
 
-.observablehq:empty:not(.observablehq--running):not(.observablehq--pending)/*, .observablehq:not(.observablehq--error):has(.observablehq--inspect)*/ {
+.observablehq:empty:not(.observablehq--running) {
   display: none;
 }
 
@@ -476,7 +476,7 @@ html {
 .hljs-attr { color: var(--syntax-definition); }
 .hljs-string { color: var(--syntax-string); }
 
-.observablehq--pending:empty::after {
+.observablehq--running:empty::after {
   content: "⋯";
   animation: observablehq--pending 750ms steps(1, end) infinite;
 }
