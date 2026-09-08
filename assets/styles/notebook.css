@@ -467,7 +467,7 @@ html {
   margin-top: 0;
 }
 
-.observablehq:empty:not(.observablehq--running)/*, .observablehq:not(.observablehq--error):has(.observablehq--inspect)*/ {
+.observablehq:empty:not(.observablehq--running):not(.observablehq--pending)/*, .observablehq:not(.observablehq--error):has(.observablehq--inspect)*/ {
   display: none;
 }
 
