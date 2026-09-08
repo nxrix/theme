@@ -10,6 +10,9 @@
       Copyright <a href="{{ site.github.owner_url }}" target="_blank">{{ site.github.owner_name }}</a> / <a href="{{ site.github.repository_url }}" target="_blank">{{ site.github.repository_name }}</a>
     </div>
     {% endif %}
-    <div style="display:flex;height:100%;aspect-ratio:3;margin-left:auto;outline:1px solid var(--theme-foreground-faintest);border-radius:12px"></div>
+    <a href="{{ site.github.repository_url }}/blob/{{ site.github.source.branch }}/{{ page.path }}" target="_blank" style="margin: auto 8px auto auto;border: 1px solid var(--theme-foreground-faintest);border-radius: 4px;display:flex;align-items:center;justify-content:center">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M160-400v-80h280v80H160Zm0-160v-80h440v80H160Zm0-160v-80h440v80H160Zm360 560v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T863-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"></path></svg>
+    </a>
+    <div style="display:flex;height:100%;aspect-ratio:3;outline:1px solid var(--theme-foreground-faintest);border-radius:12px"></div>
   </div>
 </footer>
