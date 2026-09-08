@@ -476,7 +476,7 @@ html {
 .hljs-attr { color: var(--syntax-definition); }
 .hljs-string { color: var(--syntax-string); }
 
-.observablehq--pending:empty::after {
+.observablehq--running/*pending*/:empty::after {
   content: "⋯";
   animation: observablehq--pending 750ms steps(1, end) infinite;
 }
