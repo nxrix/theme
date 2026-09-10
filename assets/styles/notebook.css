@@ -520,6 +520,13 @@ html {
   }
 }
 
+/* jekyll highlighter fix */
+
+.highlight .nt, .highlight .k, .highlight .kd { color: var(--syntax-keyword); }
+.highlight .na, .highlight .nx { color: var(--syntax-definition); }
+.highlight .s, .highlight .dl, .highlight .s2 { color: var(--syntax-string); }
+.highlight .mi { color: var(--syntax-literal); }
+
 /* theme */
 
 :root[data-theme="light"] {
