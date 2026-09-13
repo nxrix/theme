@@ -11,8 +11,7 @@
   {% if page.title %}
     {% assign full_title = site.github.owner_name | append: " | " | append: page.title %}
   {% elsif site.title %}
-    {% assign capitalized_title = site.title | capitalize %}
-    {% assign full_title = site.github.owner_name | append: " | " | append: capitalized_title %}
+    {% assign full_title = site.github.owner_name | append: " | " | append: site.title %}
   {% else %}
     {% assign full_title = site.github.owner_name %}
   {% endif %}
