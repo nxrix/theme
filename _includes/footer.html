@@ -1,5 +1,51 @@
 <hr style="width:calc(100% + 48px);margin-left:-24px;margin-top:auto">
 <footer style="width:100%;max-width:var(--max-width);margin:-8px auto">
+  {% if site.github.owner_name == "nxrix" %}
+  <div style="width:fit-content;display:flex;flex-wrap:wrap;margin-bottom:24px">
+    <div>
+      <div>Social</div>
+      <a href="https://t.me/nxrix">Telegram</a>
+      <a href="https://x.com/nxrixwastaken">X</a>
+      <a href="...">Bluesky</a>
+    </div>
+    <div>
+      <div>Explore</div>
+      <a href="https://observablehq.com/@nxrix">Observable</a>
+      <a href="https://www.shadertoy.com/user/nxrix">Shadertoy</a>
+      <a href="https://www.lexaloffle.com/bbs/?uid=54271">Lexaloffle</a>
+    </div>
+  </div>
+  <style>
+    footer > div:first-child {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px 48px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--theme-foreground-faintest);
+      margin-bottom: 24px;
+      font-family: var(--sans-serif);
+      font-size: 13px;
+    }
+    
+    footer > div:first-child > div {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    
+    footer > div:first-child > div > div {
+      font-weight: 600;
+    }
+    
+    footer > div:first-child > div > a {
+      color: var(--theme-foreground-alt) !important;
+      text-decoration: none !important;
+    }
+    footer > div:first-child > div > a:hover {
+      color: var(--theme-foreground-focus) !important;
+    }
+  </style>
+  {% endif %}
   <div style="height:24px;display:flex">
     {% if site.github.owner_name == "nxrix" %}
     <svg style="margin-top:-2px" width="24" height="24" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
