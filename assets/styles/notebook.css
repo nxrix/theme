@@ -457,6 +457,12 @@ html {
   font-variation-settings: "opsz" 14;
 }
 
+button,
+input,
+select {
+  font-family: var(--sans-serif);
+}
+
 .observablehq {
   position: relative;
   margin: 17px 0;
