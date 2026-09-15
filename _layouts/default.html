@@ -8,9 +8,9 @@
   <link rel="icon" href="{{ page.favicon | default: site.favicon | default: "/assets/images/ico/favicon.ico" | relative_url }}">
 
   {% if page.title %}
-    {% assign full_title = site.github.owner_name | append: " | " | append: page.title %}
+    {% assign full_title = page.title | append: " | " | append: site.github.owner_name %}
   {% elsif site.title %}
-    {% assign full_title = site.github.owner_name | append: " | " | append: site.title %}
+    {% assign full_title = site.title | append: " | " | append: site.github.owner_name %}
   {% else %}
     {% assign full_title = site.github.owner_name %}
   {% endif %}
