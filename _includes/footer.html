@@ -55,7 +55,7 @@
     {% else %}
     <div style="margin:auto 0;font-family:var(--sans-serif);font-size:13px">
     {% endif %}
-      {% assign pages_repo = site.github.owner_name | append: ".github.io" %}
+      {% assign pages_repo = site.github.owner_name | downcase | append: ".github.io" %}
       Copyright <a href="{{ site.github.owner_url }}" target="_blank">{{ site.github.owner_name }}</a>{% unless site.github.repository_name == pages_repo %} / <a href="{{ site.github.repository_url }}" target="_blank">{{ site.github.repository_name }}</a>{% endunless %}
     </div>
     <a href="{{ site.github.repository_url }}/blob/{{ site.github.source.branch }}/{{ page.path }}" target="_blank" style="padding:4px;margin: auto 8px auto auto;border: 1px solid var(--theme-foreground-faintest);border-radius: 4px;display:flex;align-items:center;justify-content:center">
