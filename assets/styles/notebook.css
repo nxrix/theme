@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap");
 
 :root {
-  --serif: "Source Serif 4", ui-serif, serif;
+  --serif: "Source Serif 4", ui-serif, Georgia, serif;
   --sans-serif: "Inter", ui-sans-serif, sans-serif;
   --monospace: "Spline Sans Mono", Menlo, Consolas, monospace;
   --monospace-font: 14px/1.5 var(--monospace);
@@ -276,6 +276,7 @@ figcaption {
   color: var(--theme-foreground-muted);
 }
 
+
 .observablehq--collapsed,
 .observablehq--expanded.observablehq--inspect a {
   cursor: pointer;
@@ -337,12 +338,9 @@ figcaption {
   color: var(--syntax-string);
 }
 
+.observablehq--undefined,
 .observablehq--null {
   color: var(--syntax-keyword);
-}
-
-.observablehq--undefined {
-  color: var(--syntax-variable);
 }
 
 .observablehq--prototype-key {
@@ -366,6 +364,7 @@ figcaption {
   margin: 17px 0;
   min-height: 1px; /* prevent margin collapse when empty */
 }
+
 
 .tok-link {
   color: var(--syntax-link);
@@ -415,6 +414,7 @@ figcaption {
   color: var(--syntax-meta);
 }
 
+
 .plot-d6a7b5 {
   --plot-background: var(--theme-background);
 }
@@ -423,15 +423,16 @@ p .plot-d6a7b5 {
   display: inline-block;
 }
 
+
+/* allow an empty cell to disappear completely */
 .observablehq--cell:empty {
   min-height: 0;
 }
 
+/* nudge a pinned cell’s source up under non-empty output */
 .observablehq--cell:not(:empty) + pre {
   margin-top: -11px;
 }
-
-/* inputs fix */
 
 .inputs-3a86ea-table tr:not(:last-child) td,
 .inputs-3a86ea-table tr:not(:last-child) th {
@@ -447,8 +448,6 @@ p .plot-d6a7b5 {
   background: var(--theme-background) !important;
 }
 
-/* fix */
-
 * {
   -webkit-tap-highlight-color: transparent;
 }
@@ -463,6 +462,16 @@ select {
   font-family: var(--sans-serif);
 }
 
+.hljs-meta { color: var(--syntax-meta); }
+.hljs-tag .hljs-name { color: var(--syntax-keyword); }
+.hljs-attr { color: var(--syntax-definition); }
+.hljs-string { color: var(--syntax-string); }
+
+.highlight .nt, .highlight .k, .highlight .kd { color: var(--syntax-keyword); }
+.highlight .na, .highlight .nx { color: var(--syntax-definition); }
+.highlight .s, .highlight .dl, .highlight .s2 { color: var(--syntax-string); }
+.highlight .mi { color: var(--syntax-literal); }
+
 .observablehq {
   position: relative;
   margin: 17px 0;
@@ -476,11 +485,6 @@ select {
 .observablehq:empty:not(.observablehq--running) {
   display: none;
 }
-
-.hljs-meta { color: var(--syntax-meta); }
-.hljs-tag .hljs-name { color: var(--syntax-keyword); }
-.hljs-attr { color: var(--syntax-definition); }
-.hljs-string { color: var(--syntax-string); }
 
 .observablehq--running:empty::after {
   content: "⋯";
@@ -526,15 +530,6 @@ select {
   }
 }
 
-/* jekyll highlighter fix */
-
-.highlight .nt, .highlight .k, .highlight .kd { color: var(--syntax-keyword); }
-.highlight .na, .highlight .nx { color: var(--syntax-definition); }
-.highlight .s, .highlight .dl, .highlight .s2 { color: var(--syntax-string); }
-.highlight .mi { color: var(--syntax-literal); }
-
-/* theme */
-
 :root[data-theme="light"] {
   --syntax-link: var(--theme-foreground-focus);
   --syntax-keyword: #e36209;
@@ -546,7 +541,9 @@ select {
   --syntax-definition: #005cc5;
   --syntax-variable: var(--theme-foreground-alt);
   --syntax-meta: #d73a49;
+}
 
+:root[data-theme="light"] {
   --theme-background-b: color-mix(in srgb, var(--theme-foreground) 4%, var(--theme-background-a));
   --theme-background: var(--theme-background-a);
   --theme-background-alt: var(--theme-background-b);
@@ -557,7 +554,9 @@ select {
   --theme-foreground-faintest: color-mix(in srgb, var(--theme-foreground) 14%, var(--theme-background-a));
   --theme-error: #e7040f;
   color-scheme: light;
+}
 
+:root[data-theme="light"] {
   --theme-foreground: #1b1e23;
   --theme-foreground-focus: #3b5fc0;
   --theme-background-a: #ffffff;
@@ -574,7 +573,9 @@ select {
   --syntax-definition: #79c0ff;
   --syntax-variable: var(--theme-foreground-alt);
   --syntax-meta: #ff7b72;
+}
 
+:root, :root[data-theme="dark"] {
   --theme-background-a: color-mix(in srgb, var(--theme-foreground) 4%, var(--theme-background-b));
   --theme-background: var(--theme-background-a);
   --theme-background-alt: var(--theme-background-b);
@@ -585,7 +586,9 @@ select {
   --theme-foreground-faintest: color-mix(in srgb, var(--theme-foreground) 14%, var(--theme-background-b));
   --theme-error: #e7040f;
   color-scheme: dark;
+}
 
+:root, :root[data-theme="dark"] {
   --theme-foreground: #ebebeb;
   --theme-foreground-focus: oklch(0.712564 0.257662 265.758);
   --theme-background-b: #0d0d0d;
