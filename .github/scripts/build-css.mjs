@@ -36,6 +36,10 @@ select {
   font-family: var(--sans-serif);
 }
 
+table {
+  width: auto;
+}
+
 .hljs-meta { color: var(--syntax-meta); }
 .hljs-tag .hljs-name { color: var(--syntax-keyword); }
 .hljs-attr { color: var(--syntax-definition); }
