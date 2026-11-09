@@ -1,0 +1,30 @@
+name: Build CSS
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/scripts/build-css.mjs
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build notebook.css
+        run: node .github/scripts/build-css.mjs
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/styles/notebook.css
+          git diff --cached --quiet || (git commit -m "Update notebook.css from notebook-kit" && git push)
